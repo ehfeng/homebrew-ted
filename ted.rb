@@ -5,12 +5,12 @@
 class Ted < Formula
   desc "A Go binary utility"
   homepage "https://github.com/ehfeng/ted"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     on_arm do
       url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Darwin_arm64.tar.gz"
-      sha256 ""
+      sha256 "e3d4a4a7e11d592dcb5d83a31c41371ed3ee06caaa7315484b6166d05fd8a3bf"
     end
     on_intel do
       url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Darwin_x86_64.tar.gz"
@@ -30,9 +30,7 @@ class Ted < Formula
   end
 
   def install
-    # GoReleaser names the binary with platform suffix (e.g., ted-darwin-arm64)
-    # Find and install it as "ted"
-    bin.install Dir["ted*"].first => "ted"
+    bin.install "ted"
   end
 
   test do
