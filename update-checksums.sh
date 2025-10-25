@@ -40,22 +40,22 @@ class Ted < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Darwin_arm64.tar.gz"
+      url "https://github.com/ehfeng/ted/releases/download/#{version}/ted_#{version}_Darwin_arm64.tar.gz"
       sha256 "${DARWIN_ARM64}"
     end
     on_intel do
-      url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Darwin_x86_64.tar.gz"
+      url "https://github.com/ehfeng/ted/releases/download/#{version}/ted_#{version}_Darwin_x86_64.tar.gz"
       sha256 "${DARWIN_X86_64}"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Linux_arm64.tar.gz"
+      url "https://github.com/ehfeng/ted/releases/download/#{version}/ted_#{version}_Linux_arm64.tar.gz"
       sha256 "${LINUX_ARM64}"
     end
     on_intel do
-      url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Linux_x86_64.tar.gz"
+      url "https://github.com/ehfeng/ted/releases/download/#{version}/ted_#{version}_Linux_x86_64.tar.gz"
       sha256 "${LINUX_X86_64}"
     end
   end
