@@ -1,7 +1,14 @@
 #!/bin/bash
 set -e
 
-VERSION="${1:-0.1.0}"
+# Check if VERSION is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <VERSION>"
+    echo "Example: $0 1.0.0"
+    exit 1
+fi
+
+VERSION="$1"
 
 echo "Fetching checksums for version ${VERSION}..."
 
