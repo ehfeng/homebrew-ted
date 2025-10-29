@@ -62,6 +62,7 @@ class Ted < Formula
 
   def install
     bin.install "ted"
+    generate_completions_from_executable(bin/"ted", "completion")
   end
 
   test do

@@ -3,6 +3,10 @@ version: 2
 before:
   hooks:
     - go mod tidy
+    - mkdir -p completions
+    - sh -c "go run . completion bash > completions/ted.bash"
+    - sh -c "go run . completion zsh > completions/_ted"
+    - sh -c "go run . completion fish > completions/ted.fish"
 
 builds:
   - env:
@@ -33,6 +37,7 @@ archives:
       - LICENSE*
       - README*
       - CHANGELOG*
+      - completions/*
     builds_info:
       group: root
       owner: root
