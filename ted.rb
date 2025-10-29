@@ -5,16 +5,16 @@
 class Ted < Formula
   desc "A Go binary utility"
   homepage "https://github.com/ehfeng/ted"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
     on_arm do
       url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Darwin_arm64.tar.gz"
-      sha256 "1b9be26342443f185227dd9322249b9f27be2d4324f7e421484c93fc60fe5353"
+      sha256 "5433997026717a0a7f0f483a378ea46150cacd5c5f2b279a0983c40cae4cbd39"
     end
     on_intel do
       url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Darwin_x86_64.tar.gz"
-      sha256 "ae10cb05f0437dab06f110eb86468d81b73777ac8e65ff34f1dd2bb6371e268b"
+      sha256 "1875cd18c6d7c529471ca91b09a2a983fad1de47f3ac393b41001cd9f474ac20"
     end
   end
 
@@ -25,7 +25,7 @@ class Ted < Formula
     end
     on_intel do
       url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Linux_x86_64.tar.gz"
-      sha256 "022560d14ff2a3cbdb907becd97f33a70bd418b0983a9784d179198a69cd84f9"
+      sha256 "fc02c543f3e9795253db19de0a9f1ffb79c5e742a4b07b6cd62e0ffe85d49b09"
     end
   end
 
