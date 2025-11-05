@@ -1,31 +1,15 @@
-# typed: true
-# frozen_string_literal: true
-
-# Formula for installing ted
 class Ted < Formula
-  desc "A Go binary utility"
+  desc "Terminal editor for tabular data"
   homepage "https://github.com/ehfeng/ted"
-  version "0.2.0"
+  version "0.2.2"
 
   on_macos do
-    on_arm do
-      url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Darwin_arm64.tar.gz"
-      sha256 "ca796943f276d8f1b0aa30903e4d55442a0fdea290df16e9f44d4ad61ff3c4c8"
-    end
-    on_intel do
-      url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Darwin_x86_64.tar.gz"
-      sha256 "fc595380e34cb588290d819569d8b34cd6575ebbc8be5fe38607d843b788aa38"
-    end
-  end
-
-  on_linux do
-    on_arm do
-      url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Linux_arm64.tar.gz"
-      sha256 ""
-    end
-    on_intel do
-      url "https://github.com/ehfeng/ted/releases/download/v#{version}/ted_#{version}_Linux_x86_64.tar.gz"
-      sha256 "9850c4e875c110b791e091da141efe63227f6c2fe5ec875a1bf09228feb68d37"
+    if Hardware::CPU.arm?
+      url "https://github.com/ehfeng/ted/releases/download/v0.2.2/ted_0.2.2_Darwin_arm64.tar.gz"
+      sha256 "c224f0d610c3ee0dc63854b03536fc7fee2830aede219a0a4ad606db5eee82c2"
+    else
+      url "https://github.com/ehfeng/ted/releases/download/v0.2.2/ted_0.2.2_Darwin_amd64.tar.gz"
+      sha256 "48dd15431a6ba1acb23ec5025a533e34849d7a253b7430b9cfe1ed943ba3db10"
     end
   end
 
@@ -35,6 +19,6 @@ class Ted < Formula
   end
 
   test do
-    system "#{bin}/ted", "--version"
+    system "#{bin}/ted", "--help"
   end
 end
