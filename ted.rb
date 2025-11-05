@@ -6,10 +6,10 @@ class Ted < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/ehfeng/ted/releases/download/v0.2.3/ted_0.2.3_Darwin_arm64.tar.gz"
-      sha256 "4234d09ee7395c8cdf9af96883c495c2d415c621a31c1b766fad503acd3f5f25"
+      sha256 "035c3f84e1307d693e3da21b6037fe57796e7b4699ca33eceb4789c342d7cec5"
     else
       url "https://github.com/ehfeng/ted/releases/download/v0.2.3/ted_0.2.3_Darwin_amd64.tar.gz"
-      sha256 "3ef4e54ef850fe92aa9308e040724583421a9a1979517a85231c9dbf23acdd15"
+      sha256 "c885b6c03aa40912f6ce246bfe340447e8267cfca001bff177dac2257c316c63"
     end
   end
 
@@ -17,12 +17,7 @@ class Ted < Formula
     bin.install "ted"
 
     # Generate shell completions
-    bash_completion.install Utils.safe_popen_read(bin/"ted", "--completion=bash") => "ted"
-    zsh_completion.install Utils.safe_popen_read(bin/"ted", "--completion=zsh") => "_ted"
-    fish_completion.install Utils.safe_popen_read(bin/"ted", "--completion=fish") => "ted.fish"
-
-    # PowerShell completions
-    (pkgshare/"completions").install Utils.safe_popen_read(bin/"ted", "--completion=powershell") => "ted.ps1"
+    generate_completions_from_executable(bin/"ted", "--completion", shells: [:bash, :zsh, :fish])
   end
 
   test do
