@@ -1,15 +1,15 @@
 class Ted < Formula
   desc "Terminal editor for tabular data"
   homepage "https://github.com/ehfeng/ted"
-  version "0.3.0"
+  version "0.3.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ehfeng/ted/releases/download/v0.3.0/ted_0.3.0_Darwin_arm64.tar.gz"
-      sha256 "df38ba435ff886c227641012afb28bc6113b8b5946abc3100f07569130a6b271"
+      url "https://github.com/ehfeng/ted/releases/download/v0.3.1/ted_0.3.1_Darwin_arm64.tar.gz"
+      sha256 "92cab46506c02dabd85f6440ba67d629973c7aa5184e5f33784dc34e943ca8bf"
     else
-      url "https://github.com/ehfeng/ted/releases/download/v0.3.0/ted_0.3.0_Darwin_amd64.tar.gz"
-      sha256 "3aedcecb6782a39b005e3ec0073c97ed82410a4a6376436a8fc31001bd813b1e"
+      url "https://github.com/ehfeng/ted/releases/download/v0.3.1/ted_0.3.1_Darwin_amd64.tar.gz"
+      sha256 "7d08c1b25272d3740fc4262d083b4f4e54f4fb8c1dd8034146342a191ada2717"
     end
   end
 
